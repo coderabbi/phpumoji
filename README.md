@@ -1,8 +1,9 @@
 # phpumoji
 PHPUnit Emoji Result Printer
 
-[![StyleCI](https://styleci.io/repos/96408449/shield?branch=master)](https://styleci.io/repos/96408449)
 [![Build Status](https://travis-ci.org/coderabbi/phpumoji.svg?branch=master)](https://travis-ci.org/coderabbi/phpumoji)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/coderabbi/phpumoji/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/coderabbi/phpumoji/?branch=master)
+[![StyleCI](https://styleci.io/repos/96408449/shield?branch=master)](https://styleci.io/repos/96408449)
 [![PDS Skeleton](https://img.shields.io/badge/pds-skeleton-blue.svg?style=flat-square)](https://github.com/php-pds/skeleton)
 
 ## Install
