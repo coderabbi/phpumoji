@@ -1,14 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Coderabbi\Phpumoji;
 
 use PHPUnit\Framework\TestCase;
 
-class Simulation extends TestCase
+class Preview extends TestCase
 {
     public function testPass1()
     {
-       $this->assertTrue(true);
+        $this->assertTrue(true);
     }
 
     public function testPass2()
@@ -28,7 +28,7 @@ class Simulation extends TestCase
 
     public function testRisky()
     {
-
+        // intentionally blank
     }
 
     public function testPass6()
@@ -43,7 +43,7 @@ class Simulation extends TestCase
 
     public function testFail1()
     {
-        throw new \Exception();
+        throw new \Exception('The test threw an uncaught exception.');
     }
 
     public function testPass8()
@@ -63,7 +63,7 @@ class Simulation extends TestCase
 
     public function testError()
     {
-        $this->assertTrue(false);
+        $this->assertTrue(false, 'This test has a faile assertion.');
     }
 
     public function testPass11()
@@ -83,7 +83,7 @@ class Simulation extends TestCase
 
     public function testIncomplete()
     {
-        $this->markTestIncomplete();
+        $this->markTestIncomplete('This test is incomplete.');
     }
 
     public function testPass14()
@@ -91,4 +91,38 @@ class Simulation extends TestCase
         $this->assertTrue(true);
     }
 
+    public function testPass15()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function testSkipped()
+    {
+        $this->markTestSkipped('This test was skipped.');
+    }
+
+    public function testPass16()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function testPass17()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function testPass18()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function testPass19()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function testPass20()
+    {
+        $this->assertTrue(true);
+    }
 }
