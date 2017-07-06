@@ -9,7 +9,7 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
-         emojiset="default">
+         emojiset="phpumoji">
     <testsuites>
         <testsuite name="Coderabbi/Phpumoji Test Suite">
             <directory>tests</directory>
