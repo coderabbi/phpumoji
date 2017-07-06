@@ -1,0 +1,12 @@
+<?php
+
+return  [
+    'phpumoji' => [
+        'error' => "🚩",
+        'failure' => "💩",
+        'incomplete' => "🚧",
+        'risky' => "🎲",
+        'skipped' => "🙈",
+        'pass' => "🐘"
+    ]
+];

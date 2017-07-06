@@ -13,9 +13,10 @@ final class EmojiPrinter extends ResultPrinter
     public function startTestSuite(TestSuite $suite)
     {
         $config = Xml::loadFile($GLOBALS['__PHPUNIT_CONFIGURATION_FILE'], false, true, true)->documentElement;
+        $emojifile = $config->hasAttribute('emojifile') ? $config->getAttribute('emojifile') : (__DIR__ . '/.emojifile');
         $emojiset = $config->hasAttribute('emojiset') ? $config->getAttribute('emojiset') : 'phpumoji';
 
-        $this->emojis = require(__DIR__ . "/Emojisets/{$emojiset}");
+        $this->emojis = (require($emojifile))[$emojiset];
 
         if ($this->numTests == -1) {
             $this->numTests = count($suite);
