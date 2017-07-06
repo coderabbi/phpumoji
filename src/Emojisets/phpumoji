@@ -1,0 +1,10 @@
+<?php
+
+return  [
+    'error' => "🚩",
+    'failure' => "💩",
+    'incomplete' => "🚧",
+    'risky' => "🎲",
+    'skipped' => "🙈",
+    'pass' => "🐘"
+];
