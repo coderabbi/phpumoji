@@ -14,14 +14,24 @@ Via Composer
 $ composer require coderabbi/phpumoji --dev
 ```
 
-## Usage
-
 To enable PHPUnit emoji output, add the following two lines to the opening element of your `phpunit.xml`:
 
 ``` php
 printerFile="vendor/coderabbi/phpumoji/src/EmojiPrinter.php"
 printerClass="Coderabbi\Phpumoji\EmojiPrinter"
 ```
+
+If you wish to select an emojiset for PHP emoji output, add the following additional line to the opening element of your `phpunit.xml`, specifying your selection:
+
+``` php
+emojiset="phpumoji"
+```
+
+The default emojiset is 'phpumoji'; currently that is the only emojiset available (soon, grasshopper... :sunglasses:).
+
+## Usage
+
+Usage of PHPUnit is unchanged with coderabbi/phpumoji.
 
 ## Change log
 
