@@ -9,6 +9,8 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false"
+         printerFile="src/EmojiPrinter.php"
+         printerClass="Coderabbi\Phpumoji\EmojiPrinter"
          emojiset="phpumoji">
     <testsuites>
         <testsuite name="Coderabbi/Phpumoji Test Suite">
