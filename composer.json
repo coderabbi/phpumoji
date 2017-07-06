@@ -1,0 +1,54 @@
+{
+    "name": "coderabbi/phpumoji",
+    "description": "PHPUnit Emoji Result Printer",
+    "type": "library",
+    "keywords": [
+        "coderabbi",
+        "phpumoji",
+        "emoji",
+        "phpunit"
+    ],
+    "homepage": "https://coderabbi.github.io/phpumoji",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yitzchok Willroth",
+            "email": "coderabbi@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/coderabbi/phpumoji/issues"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.0",
+        "phpunit/phpunit": "^6.0",
+        "roave/security-advisories": "dev-master"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Coderabbi\\Phpumoji\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Coderabbi\\Phpumoji\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.0.0"
+        },
+        "sort-packages": true
+    }
+}
