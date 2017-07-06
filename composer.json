@@ -42,6 +42,7 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "preview": "vendor/bin/phpunit tests/Preview"
     },
     "extra": {
         "branch-alias": {
