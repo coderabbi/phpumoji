@@ -38,8 +38,8 @@ final class EmojiPrinter extends ResultPrinter
 
     private function emojify(string $progress) :string
     {
-        return array_values(array_filter($this->emojis, function ($key) use ($progress) {
+        return (array_values(array_filter($this->emojis, function ($key) use ($progress) {
             return strrpos(strtoupper($key), $progress) === 0;
-        }, ARRAY_FILTER_USE_KEY))[0] ?? $this->emojis['pass'];
+        }, ARRAY_FILTER_USE_KEY))[0] ?? $this->emojis['pass']) . ' ';
     }
 }
