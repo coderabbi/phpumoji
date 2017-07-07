@@ -10,8 +10,8 @@ use PHPUnit\Util\Xml;
 
 final class EmojiPrinter extends ResultPrinter
 {
-    const CONFIG = __DIR__ . '/../config/';
-    const EMOJIFILE = '.emojifile';
+    const CONFIG = __DIR__ . '/../config';
+    const EMOJIFILE = '/.emojifile';
     const EMOJISET = 'phpumoji';
     const SPACER = ' ';
 
