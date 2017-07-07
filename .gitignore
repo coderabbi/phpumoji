@@ -2,3 +2,5 @@
 composer.lock
 phpunit.xml
 /build/
+.emojifile
+!config/.emojifile

@@ -2,21 +2,25 @@
 
 namespace Coderabbi\Phpumoji;
 
+use LitEmoji\LitEmoji;
 use PHPUnit\Framework\TestSuite;
 use PHPUnit\TextUI\ResultPrinter;
 use PHPUnit\Util\Xml;
 
 final class EmojiPrinter extends ResultPrinter
 {
-    protected $emojis;
+    private $emojis;
 
     public function startTestSuite(TestSuite $suite)
     {
-        $config = Xml::loadFile($GLOBALS['__PHPUNIT_CONFIGURATION_FILE'], false, true, true)->documentElement;
-        $emojifile = $config->hasAttribute('emojifile') ? $config->getAttribute('emojifile') : (__DIR__ . '/.emojifile');
-        $emojiset = $config->hasAttribute('emojiset') ? $config->getAttribute('emojiset') : 'phpumoji';
+        $phpunit = Xml::loadFile($GLOBALS['__PHPUNIT_CONFIGURATION_FILE'], false, true, true)->documentElement;
 
-        $this->emojis = (require($emojifile))[$emojiset];
+        $emojiset = $phpunit->hasAttribute('emojiset') ? $phpunit->getAttribute('emojiset') : 'phpumoji';
+
+        $emojifile = array_merge(parse_ini_file(__DIR__ . '/../config/.emojifile', true), file_exists(substr($GLOBALS['__PHPUNIT_CONFIGURATION_FILE'], 0, strrpos($GLOBALS['__PHPUNIT_CONFIGURATION_FILE'], '/')) . '/.emojifile') ?
+            parse_ini_file(substr($GLOBALS['__PHPUNIT_CONFIGURATION_FILE'], 0, strrpos($GLOBALS['__PHPUNIT_CONFIGURATION_FILE'], '/')) . '/.emojifile', true) : []);
+
+        $this->emojis = $emojifile[$emojiset] ?? $emojifile['phpumoji'];
 
         if ($this->numTests == -1) {
             $this->numTests = count($suite);
@@ -39,8 +43,8 @@ final class EmojiPrinter extends ResultPrinter
 
     private function emojify(string $progress) :string
     {
-        return (array_values(array_filter($this->emojis, function ($key) use ($progress) {
+        return LitEmoji::encodeUnicode(':' . (array_values(array_filter($this->emojis, function ($key) use ($progress) {
             return strrpos(strtoupper($key), $progress) === 0;
-        }, ARRAY_FILTER_USE_KEY))[0] ?? $this->emojis['pass']) . ' ';
+        }, ARRAY_FILTER_USE_KEY))[0] ?? $this->emojis['pass']) . ': ') ;
     }
 }
