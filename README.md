@@ -59,7 +59,7 @@ skipped = ghost
 pass = monkey
 ```
 
-Note that the values in the emojiset are snale-cased emoji short codes *without the opening and closing colons*; most existing short codes are supported, a list of supported shortcodes will be added soon.
+Note that the values in the emojiset are snake-cased emoji short codes *without the opening and closing colons*; most existing short codes are supported, a list of supported shortcodes will be added soon.
 
 You may choose to override one or more of the packaged emojisets (as in the case of "phumoji", above, which overrides the default emojiset), or you may define your own (as in the case of "weird", above).
 
