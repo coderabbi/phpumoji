@@ -85,7 +85,7 @@ final class EmojiPrinter extends ResultPrinter
 
     private function shortcode(string $character): string
     {
-        return array_values(array_filter($this->emojis, function($emojikey) use ($character) {
+        return array_values(array_filter($this->emojis, function ($emojikey) use ($character) {
             return strrpos(strtoupper($emojikey), $character) === 0;
         }, ARRAY_FILTER_USE_KEY))[0] ?? $this->emojis['pass'];
     }
