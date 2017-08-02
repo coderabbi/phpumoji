@@ -23,7 +23,7 @@
     "require": {
         "php": "^7.0",
         "elvanto/litemoji": "^1.1",
-        "phpunit/phpunit": "^6.0",
+        "phpunit/phpunit": "^5.7||^6.0",
         "roave/security-advisories": "dev-master"
     },
     "require-dev": {
