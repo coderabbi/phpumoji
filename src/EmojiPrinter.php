@@ -8,6 +8,13 @@ use PHPUnit\Framework\TestSuite;
 use PHPUnit\TextUI\ResultPrinter;
 use PHPUnit\Util\Xml;
 
+// Backward compatibility with phpunit 5
+if (!class_exists('PHPUnit\TextUI\ResultPrinter')) {
+    class_alias(\PHPUnit_TextUI_ResultPrinter::class, 'PHPUnit\TextUI\ResultPrinter');
+    class_alias(\PHPUnit_Framework_TestSuite::class, 'PHPUnit\Framework\TestSuite');
+    class_alias(\PHPUnit_Util_XML::class, 'PHPUnit\Util\XML');
+}
+
 final class EmojiPrinter extends ResultPrinter
 {
     const CONFIG = __DIR__ . '/../config';
